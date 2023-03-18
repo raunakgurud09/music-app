@@ -9,7 +9,7 @@ export default function Wishlist() {
   return (
     <div onClick={handleWishlist}>
       {wishlist ? (
-        <AiFillHeart size={25} color='red' />
+        <AiFillHeart size={25} color='pink' />
       ) : (
         <AiOutlineHeart size={25} color='red' />
       )}

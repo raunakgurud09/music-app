@@ -14,6 +14,14 @@ import { IoMdCart } from 'react-icons/io';
 import SmallBadge from '@/components/ui/Badges/Small';
 import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import Container from '@/components/core/Layouts/Container';
+import {
+  DashboardLogo,
+  HomeIcon,
+  PersonIcon,
+  PlaylistIcon,
+  SearchIcon,
+  SignOutIcon,
+} from '@/components/Icons';
 
 export interface navList {
   name: string;
@@ -23,12 +31,39 @@ export interface navList {
 export interface navList extends Array<navList> {}
 
 export const navLists = [
-  // {
-  //   name:"Cart",
-  //   href:"/cart"
-  // }
+  {
+    name: 'Home',
+    href: '/',
+    icon: <HomeIcon />,
+  },
+  {
+    name: 'Search',
+    href: '/search',
+    icon: <SearchIcon />,
+  },
+  {
+    name: 'Playlist',
+    href: '/playlist/me',
+    icon: <PlaylistIcon />,
+  },
+  {
+    name: 'Dashboard',
+    href: '/dashboard',
+    icon: <DashboardLogo />,
+  },
+  {
+    name: 'Profile',
+    href: '/profile',
+    icon: <PersonIcon />,
+  },
+  {
+    name: 'Sign out',
+    href: '/signout',
+    icon: <SignOutIcon />,
+  },
 ];
 
+// icon: <PersonIcon />,
 const Navigation = () => {
   // const { data: session } = useSession()
   const { data: currentUser } = useUser();
@@ -39,23 +74,22 @@ const Navigation = () => {
 
   return (
     // <Container>
-    <nav className=' item-center  sticky top-0 z-50 flex  select-none py-4 font-mono backdrop-blur'>
+    <nav className=' sticky top-0 bottom-0 z-10 flex h-screen w-24 select-none flex-col items-center py-4 font-mono backdrop-blur'>
       <Link href='/' passHref>
-        <h2 className='text-2xl font-bold'>MUSIC</h2>
+        <h2 className='text-2xl font-bold'>Logo</h2>
       </Link>
-
-      <div className='flex-1'></div>
-      <div className='hidden items-center md:flex'>
-        <ul className='flex items-center space-x-2'>
-          {navLists.map(({ name, href }: any) => (
+      <div className='mt-10 items-center '>
+        <ul className='flex w-[52px] flex-col items-center space-y-6 rounded-full bg-stone-900 py-7 '>
+          {navLists.map(({ name, href, icon }: any) => (
             <div
               key={name}
-              className='rounded-md px-4 py-1 opacity-70 hover:bg-slate-500/10 hover:opacity-100  '
+              className='h-[22px] w-[22px] rounded-md opacity-70 hover:bg-zinc-900/10 hover:opacity-100'
             >
-              <Link href={href}>{name}</Link>
+              <Link className='hover:text-red-500' href={href}>
+                {icon}
+              </Link>
             </div>
           ))}
-          <span className='bg-900 mx-6 h-6 w-px'></span>
         </ul>
       </div>
 

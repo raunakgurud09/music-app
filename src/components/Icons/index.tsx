@@ -14,3 +14,9 @@ export { default as MailLogo } from './Mail';
 export { default as LinkedinLogo } from './linkedin';
 export { default as IconGoogle } from './IconGoogle';
 export { default as View } from './View';
+export { default as HomeIcon } from './HomeIcon';
+export { default as DashboardLogo } from './Dashboard';
+export { default as SearchIcon } from './SearchIcon';
+export { default as SignOutIcon } from './SignOutIcon';
+export { default as PlaylistIcon } from './PlaylistIcon';
+export { default as PersonIcon } from './Person'
