@@ -1,0 +1,112 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.theme-light {
+  --color-background-50: #ffffff;
+  --color-background-100: #fafafa;
+  --color-background-300: #f5f5f5;
+  --color-background-500: #ededed;
+  --color-background-700: #e6e5e5;
+  --color-background-900: #dedede;
+
+  --color-foreground-50: #d8d5d4;
+  --color-foreground-100: #969392;
+  --color-foreground-300: #565352;
+  --color-foreground-500: #32302f;
+  --color-foreground-700: #1f1e1e;
+  --color-foreground-900: #0d0d0d;
+
+  --color-background-50-backdrop: rgba(255, 255, 255, 0.8);
+  --color-background-100-backdrop: rgba(255, 255, 255, 0.8);
+  --color-background-500-backdrop: rgba(255, 255, 255, 0.8);
+  --color-background-900-backdrop: rgba(222, 222, 222, 0.8);
+  --color-background-darken: rgba(0, 0, 0, 0.025);
+
+  --color-primary-50: #ffebeb;
+  --color-primary-100: #fcc5c5;
+  --color-primary-300: #f97777;
+  --color-primary-500: #f74f4f;
+  --color-primary-700: #ea0b0b;
+  --color-primary-900: #610505;
+
+  --color-primary-inverted-50: #143e17;
+  --color-primary-inverted-100: #114615;
+  --color-primary-inverted-300: #ffffff;
+  --color-primary-inverted-500: #ffffff;
+  --color-primary-inverted-700: #ffffff;
+  --color-primary-inverted-900: #ffffff;
+
+  --color-primary-foreground-50: #610505;
+  --color-primary-foreground-100: #ea0b0b;
+  --color-primary-foreground-300: #f74f4f;
+  --color-primary-foreground-500: #f97777;
+  --color-primary-foreground-700: #fcc5c5;
+  --color-primary-foreground-900: #ffebeb;
+}
+.theme-dark {
+  --color-background-50: #171717;
+  --color-background-100: #1d1d1d;
+  --color-background-300: #232323;
+  --color-background-500: #2f2f2f;
+  --color-background-700: #3b3b3b;
+  --color-background-900: #474747;
+
+  --color-foreground-50: #585858;
+  --color-foreground-100: #828282;
+  --color-foreground-300: #acacac;
+  --color-foreground-500: #d6d6d6;
+  --color-foreground-700: #ebebeb;
+  --color-foreground-900: #ffffff;
+
+  --color-background-50-backdrop: rgba(23, 23, 23, 0.8);
+  --color-background-100-backdrop: rgba(29, 29, 29, 0.8);
+  --color-background-500-backdrop: rgba(47, 47, 47, 0.8);
+  --color-background-900-backdrop: rgba(71, 71, 71, 0.8);
+  --color-background-darken: rgba(0, 0, 0, 0.1);
+
+  --color-primary-50: #ffebeb;
+  --color-primary-100: #fcc5c5;
+  --color-primary-300: #ffaeae;
+  --color-primary-500: #ff8484;
+  --color-primary-700: #eb3c3c;
+  --color-primary-900: #a43535;
+
+  --color-primary-inverted-50: #143e17;
+  --color-primary-inverted-100: #114615;
+  --color-primary-inverted-300: #ffffff;
+  --color-primary-inverted-500: #ffffff;
+  --color-primary-inverted-700: #ffffff;
+  --color-primary-inverted-900: #ffffff;
+
+  --color-primary-foreground-50: #610505;
+  --color-primary-foreground-100: #ea0b0b;
+  --color-primary-foreground-300: #f74f4f;
+  --color-primary-foreground-500: #f97777;
+  --color-primary-foreground-700: #fcc5c5;
+  --color-primary-foreground-900: #ffebeb;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--color-background-50);
+}
+::selection {
+  color: white;
+  background: var(--color-background-900);
+}
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-background-900);
+  /* background: white; */
+}
+::-webkit-scrollbar-thumb {
+  /* background-color: var(--color-foreground-300); */
+  background-color: white;
+  border-radius: 6px;
+  border: 3px solid var(--color-background-900);
+}
