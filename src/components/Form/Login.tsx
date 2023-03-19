@@ -8,6 +8,7 @@ import Spinner from '../ui/spinner';
 import FilledButton from '../ui/Buttons/Filled';
 import { View } from '../Icons';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 export default function SignUp() {
   // const { login, loggingIn, error } = useLogins();
@@ -25,20 +26,23 @@ export default function SignUp() {
 
   const handleSubmit = async (values) => {
     try {
+      toast.info('Submitted!');
       await login(values.email, values.password);
+      toast.success('Logged In');
       if (ref) {
         Router.push(`/products/${ref}`);
       } else {
         Router.push('/');
       }
     } catch (error) {
+      toast.error('Invalid password and username');
       setErrorMsg('**Invalid password**');
     }
   };
 
   return (
     <div className='flex h-screen flex-row items-start justify-center'>
-      <div className='flex flex-col mt-10'>
+      <div className='mt-10 flex flex-col'>
         <h5 className='text-4xl font-medium'>Login</h5>
         <Formik
           initialValues={{ email: '', password: '' }}

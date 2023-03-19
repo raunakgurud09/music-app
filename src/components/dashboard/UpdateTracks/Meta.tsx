@@ -5,6 +5,7 @@ import useMetaAddTrack from '@/hooks/track/useMetaAddTrack';
 import useMyTrack from '@/hooks/track/useMyTracks';
 import { useUser } from '@/hooks/user/useUser';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface InitialState {
   id: string;
@@ -41,9 +42,11 @@ function Meta() {
       if (track.id === undefined || track.id == '') {
         return;
       }
+      toast.info('Submitted');
       await addMetaTrack(track);
+      toast.success('Successfully updated');
     } catch (error) {
-      alert('not updated');
+      toast.error('Error in update');
     }
   };
 

@@ -6,6 +6,7 @@ import useAudioAddTrack from '@/hooks/track/useAudioAddTrack';
 import useMyTrack from '@/hooks/track/useMyTracks';
 import { useUser } from '@/hooks/user/useUser';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface InitialState {
   id: string;
@@ -39,9 +40,11 @@ function AudioUpdate() {
         return;
       }
       console.log(track);
+      toast.info('Submitted');
       await addAudio(track);
+      toast.success('Audio uploaded');
     } catch (error) {
-      alert('not updated');
+      toast.error('Error in audio upload');
     }
   };
 

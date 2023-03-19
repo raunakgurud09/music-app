@@ -10,6 +10,7 @@ import { useTheme } from 'next-themes';
 import { useState } from 'react';
 import { MAX_FILE_SIZE } from '../constants';
 import Line from '@/components/ui/Line';
+import { toast } from 'react-toastify';
 
 interface InitialState {
   image: string | ArrayBuffer | null;
@@ -33,9 +34,11 @@ const profile = () => {
   const handleUpdateProfile = async () => {
     if (!currentUser) return;
     try {
+      toast.info('submitted');
       await updateUser(currentUser?._id, userInfo);
+      toast.success('Profile Picture updated');
     } catch (error) {
-      alert('not updated');
+      toast.error('Profile not updated');
     }
   };
 

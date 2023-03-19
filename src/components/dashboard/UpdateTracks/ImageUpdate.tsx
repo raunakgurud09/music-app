@@ -7,6 +7,7 @@ import useImageAddTrack from '@/hooks/track/useImageAddTrack';
 import useMyTrack from '@/hooks/track/useMyTracks';
 import { useUser } from '@/hooks/user/useUser';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 interface InitialState {
   id: string;
@@ -40,9 +41,11 @@ function ImageUpdate() {
         return;
       }
       console.log(track);
+      toast.info('Submitted');
       await addImage(track);
+      toast.success('Image uploaded');
     } catch (error) {
-      alert('not updated');
+      toast.error('Error in image upload');
     }
   };
 

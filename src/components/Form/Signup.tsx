@@ -6,6 +6,7 @@ import FilledButton from '../ui/Buttons/Filled';
 import { useTheme } from 'next-themes';
 import { View } from '../Icons';
 import Link from 'next/link';
+import { toast } from 'react-toastify';
 
 export default function register() {
   const register = useRegister();
@@ -25,11 +26,12 @@ export default function register() {
     onSubmit: async (values) => {
       console.log(values);
       await register(values.name, values.email, values.password);
+      toast.success('Register successfully!!');
     },
   });
   return (
     <div className='flex h-screen flex-row items-start justify-center'>
-      <div className='flex flex-col mt-10'>
+      <div className='mt-10 flex flex-col'>
         <h5 className='text-4xl font-medium'>Sign Up</h5>
         <form
           onSubmit={formik.handleSubmit}

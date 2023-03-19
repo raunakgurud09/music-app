@@ -1,18 +1,6 @@
 import Link from 'next/link';
-import Signature from '../../Icons/Signature';
-import SmallNav from './SmallNav';
-import ThemeSwitch from '../../ThemeSwitch';
-import LogIn from '../../ui/Buttons/login-btn';
 import { useUser } from '@/hooks/user/useUser';
 import { useEffect } from 'react';
-import { Avatar } from '../../ui/Avatar/Avatar';
-import { GetServerSideProps } from 'next';
-import { fetcherSSR } from '@/lib/fetchSSR';
-import DropDown from '../../ui/DropDown/DropDown';
-import Image from '@/components/ui/Image';
-import { IoMdCart } from 'react-icons/io';
-import SmallBadge from '@/components/ui/Badges/Small';
-import { AiFillHeart, AiOutlineHeart } from 'react-icons/ai';
 import {
   DashboardLogo,
   HomeIcon,
@@ -22,6 +10,7 @@ import {
   SignOutIcon,
 } from '@/components/Icons';
 import { useLogout } from '@/hooks/useAuth';
+import { toast } from 'react-toastify';
 
 export interface navList {
   name: string;
@@ -62,6 +51,7 @@ const Navigation = () => {
   const handleLogout = () => {
     logout();
     window.location.href = '/login';
+    toast.success('Logged Out!');
   };
 
   useEffect(() => {

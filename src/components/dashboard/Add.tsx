@@ -2,6 +2,7 @@ import { MAX_FILE_SIZE } from '@/constants/index';
 import useAddTrack from '@/hooks/track/useAddTrack';
 import { useUser } from '@/hooks/user/useUser';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 import FilledButton from '../ui/Buttons/Filled';
 import Line from '../ui/Line';
 
@@ -13,7 +14,7 @@ interface InitialState {
 
 function Add() {
   const { data: currentUser } = useUser();
-  const addTrack = useAddTrack()
+  const addTrack = useAddTrack();
   const initialState: InitialState = {
     name: '',
     lyrics: '',
@@ -30,10 +31,11 @@ function Add() {
   const handleTrackUpdate = async () => {
     if (!currentUser) return;
     try {
+      toast.info('submitted');
       await addTrack(track);
-      console.log(track);
+      toast.success('Track added');
     } catch (error) {
-      alert('not updated');
+      toast.error('Error!! track not added');
     }
   };
 

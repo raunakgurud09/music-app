@@ -5,6 +5,7 @@ import useDelTrack from '@/hooks/track/useDelTrack';
 import useMyTrack from '@/hooks/track/useMyTracks';
 import { useUser } from '@/hooks/user/useUser';
 import React, { useState } from 'react';
+import { toast } from 'react-toastify';
 
 function Delete() {
   const { data: myTracks } = useMyTrack();
@@ -15,12 +16,14 @@ function Delete() {
 
   const handleTrackUpdate = async () => {
     try {
-      if (idF !== undefined && idF !== '') {
-        await deleteTrack(idF);
+      if (idF === undefined || idF == '') {
+        return;
       }
-      return;
+      toast.info('submitted');
+      await deleteTrack(idF);
+      toast.success('Successfully deleted the track');
     } catch (error) {
-      alert('delete fail');
+      toast.error('Error track not deleted');
     }
   };
 
