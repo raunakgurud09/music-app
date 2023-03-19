@@ -38,7 +38,7 @@ export default function SignUp() {
 
   return (
     <div className='flex h-screen flex-row items-start justify-center'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col mt-10'>
         <h5 className='text-4xl font-medium'>Login</h5>
         <Formik
           initialValues={{ email: '', password: '' }}
@@ -77,10 +77,7 @@ export default function SignUp() {
                   type='email'
                   name='email'
                   onChange={handleChange}
-                  className={cx(
-                    'border',
-                    theme === 'dark' ? 'bg-black' : 'bg-white'
-                  )}
+                  className={cx('border', 'bg-black/30')}
                   onBlur={handleBlur}
                   value={values.email}
                 />
@@ -93,10 +90,7 @@ export default function SignUp() {
                 <input
                   type={passwordShown ? 'text' : 'password'}
                   name='password'
-                  className={cx(
-                    'border ',
-                    theme === 'dark' ? 'bg-black' : 'bg-white'
-                  )}
+                  className={cx('border ', 'bg-black/30')}
                   onChange={handleChange}
                   onBlur={handleBlur}
                   value={values.password}

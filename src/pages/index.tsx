@@ -1,4 +1,3 @@
-import Container from '@/components/core/Layouts/Container';
 import Error from '@/components/Error';
 import Hero from '@/components/Home/Hero';
 import Playlist from '@/components/Home/Playlist';

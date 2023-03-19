@@ -29,7 +29,7 @@ export default function register() {
   });
   return (
     <div className='flex h-screen flex-row items-start justify-center'>
-      <div className='flex flex-col'>
+      <div className='flex flex-col mt-10'>
         <h5 className='text-4xl font-medium'>Sign Up</h5>
         <form
           onSubmit={formik.handleSubmit}
@@ -43,10 +43,7 @@ export default function register() {
               type='name'
               onChange={formik.handleChange}
               value={formik.values.name}
-              className={cx(
-                'h-10 border',
-                theme === 'dark' ? 'bg-black' : 'bg-white'
-              )}
+              className={cx('h-10 border', 'bg-black/30')}
             />
           </div>
           <div className='flex w-72 flex-col'>
@@ -57,10 +54,7 @@ export default function register() {
               type='email'
               onChange={formik.handleChange}
               value={formik.values.email}
-              className={cx(
-                'border',
-                theme === 'dark' ? 'bg-black' : 'bg-white'
-              )}
+              className={cx('border', 'bg-black/30')}
             />
           </div>
           <div className='relative flex flex-col'>
@@ -71,10 +65,7 @@ export default function register() {
               type='password'
               onChange={formik.handleChange}
               value={formik.values.password}
-              className={cx(
-                'border',
-                theme === 'dark' ? 'bg-black' : 'bg-white'
-              )}
+              className={cx('border', 'bg-black/30')}
             />
             <button
               className='absolute right-2 top-9'

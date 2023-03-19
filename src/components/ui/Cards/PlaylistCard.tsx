@@ -7,10 +7,10 @@ function PlaylistCard({ imageUrl, name, artist, count }) {
       <Image
         src={imageUrl}
         alt='playlist'
-        layout='fill'
-        objectFit='cover'
-        className='hover:opacity-40'
-      />
+        width="224"
+        height="224"
+        className='fill h-full rounded-3xl object-cover hover:opacity-30 transition-all ease-in'
+        />
       <div className='absolute bottom-5 left-5 z-20'>
         <h3 className='text-2xl font-light'>name</h3>
         <p className='text-xs font-normal'>artists</p>

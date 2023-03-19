@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
 
-import lead from '../Playlist/Lead-image.png';
+import lead from '../../../public/images/Frame.png';
 import SmallTrack from '../ui/Cards/SmallTrack';
 
 function Hero() {
@@ -11,7 +11,7 @@ function Hero() {
         <Image
           src={lead}
           alt='banner'
-          width={900}
+          width={1000}
           height={400}
           className='fill h-full rounded-3xl object-cover'
         />

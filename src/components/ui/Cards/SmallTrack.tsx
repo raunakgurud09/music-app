@@ -3,7 +3,7 @@ import Image from 'next/image';
 
 function SmallTrack({ name = '', imageUrl, artist = '' }) {
   return (
-    <div className='flex h-24 w-96 items-center justify-between rounded-3xl px-4 bg-stone-900'>
+    <div className='flex h-24 w-full items-center justify-between rounded-3xl px-4 bg-stone-900'>
       <div className='h-16 w-16 rounded-xl '>
         <Image
           src={imageUrl}
