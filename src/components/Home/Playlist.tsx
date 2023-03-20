@@ -1,20 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PlaylistCard from '../ui/Cards/PlaylistCard';
-import lead from "../Playlist/Lead-image.png"
+import lead from '../Playlist/Lead-image.png';
+import { usePlaylist } from '@/hooks/playlist/usePlaylist';
+import Spinner from '../ui/spinner/Spinner';
+import CreatePlaylist from '../ui/Modal/createPlaylist';
 
 function Playlist() {
+  const { data, isLoading, error } = usePlaylist();
+  const [show, setShow] = useState(false);
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
+  if (error) {
+    return <div>error</div>;
+  }
+
   return (
-    <div className='h-fit flex flex-col items-start space-y-4'>
-      <h3 className='font-bold text-2xl'>New release.</h3>
-      <div className='flex flex-wrap w-full justify-between p-1'>
-        <PlaylistCard imageUrl={lead} name='' artist='' count='' />
-        <PlaylistCard imageUrl={''} name='' artist='' count='' />
-        <PlaylistCard imageUrl={''} name='' artist='' count='' />
-        <PlaylistCard imageUrl={''} name='' artist='' count='' />
-        <PlaylistCard imageUrl={''} name='' artist='' count='' />
+    <div className='flex h-fit flex-col items-start space-y-4'>
+      <h3 className='text-2xl font-bold'>Your Playlists</h3>
+      <div className='flex w-full max-w-[1500px] space-x-4 overflow-x-auto p-1'>
+        <div
+          className='relative h-56 w-56 rounded-[20px] bg-black'
+          onClick={() => {
+            setShow(true);
+          }}
+        >
+          +
+        </div>
+        <CreatePlaylist show={show} onClose={() => setShow(false)} />
+        {data &&
+          data.map((playlist) => (
+            <PlaylistCard
+              key={playlist._id}
+              id={playlist._id}
+              imageUrl={playlist.imageUrl}
+              name={playlist.name}
+              artist={playlist.artist}
+            />
+          ))}
       </div>
     </div>
   );
 }
 
 export default Playlist;
+
+{
+}

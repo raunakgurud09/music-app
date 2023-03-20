@@ -30,7 +30,7 @@ function TrackPlayer() {
           </div>
         </div>
         <div>
-          {/* <audio controls></audio> */}
+          {/* <audio src={"https://res.cloudinary.com/dmaeznlik/video/upload/v1679085888/audio/6414c596b30e2fca36123639.mp3"} controls></audio> */}
           <div className='mb-6 flex items-center justify-center space-x-4'>
             <AudioBtn icon={<ShuffleIcon />} />
             <AudioBtn icon={<PrevIcon />} />

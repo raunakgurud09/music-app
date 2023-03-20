@@ -11,6 +11,7 @@ import {
 } from '@/components/Icons';
 import { useLogout } from '@/hooks/useAuth';
 import { toast } from 'react-toastify';
+import ThemeSwitch from '@/components/ThemeSwitch';
 
 export interface navList {
   name: string;
@@ -76,6 +77,7 @@ const Navigation = () => {
               </Link>
             </div>
           ))}
+          <ThemeSwitch />
         </ul>
         <ul className='flex w-[52px] flex-col items-center space-y-6 rounded-full bg-stone-900 py-7 '>
           <div className='h-[22px] w-[22px] items-center rounded-md opacity-70 hover:bg-zinc-900/100 hover:opacity-100'>

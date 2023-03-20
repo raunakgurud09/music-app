@@ -9,8 +9,8 @@ const Home = ({ working }) => {
   return (
     <>
       {working ? (
-        <div className='w-full mb-40'>
-          <div className='p-4 space-y-6 flex w-full flex-col'>
+        <div className='mb-40 w-full'>
+          <div className='flex w-full flex-col space-y-6 p-4'>
             <SearchBar />
             <Hero />
             <Playlist />

@@ -10,6 +10,17 @@ const getMyTracks = async () => {
   }
 };
 
+const getTopTrack = async () => {
+  try {
+    const url = '/track/';
+    const { data } = await apiClient.get(url);
+    console.log(data.data);
+    return data.data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 const addTrack = async (track) => {
   try {
     const url = `/track`;
@@ -83,7 +94,8 @@ const TrackServices = {
   deleteTrack,
   metaAddTrack,
   imageAddTrack,
-  audioAddTrack
+  audioAddTrack,
+  getTopTrack,
 };
 
 export default TrackServices;
