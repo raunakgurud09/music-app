@@ -1,46 +1,13 @@
 import React, { useState } from 'react';
-import PlaylistCard from '../ui/Cards/PlaylistCard';
-import lead from '../Playlist/Lead-image.png';
-import { usePlaylist } from '@/hooks/playlist/usePlaylist';
-import Spinner from '../ui/spinner/Spinner';
-import CreatePlaylist from '../ui/Modal/createPlaylist';
+import UserPlaylist from './UserPlaylist';
+import { useUser } from '@/hooks/user/useUser';
 
 function Playlist() {
-  const { data, isLoading, error } = usePlaylist();
-  const [show, setShow] = useState(false);
-
-  if (isLoading) {
-    return <Spinner />;
-  }
-
-  if (error) {
-    return <div>error</div>;
-  }
-
+  const { data: currentUser } = useUser();
   return (
     <div className='flex h-fit flex-col items-start space-y-4'>
       <h3 className='text-2xl font-bold'>Your Playlists</h3>
-      <div className='flex w-full max-w-[1500px] space-x-4 overflow-x-auto p-1'>
-        <div
-          className='relative h-56 w-56 rounded-[20px] bg-black'
-          onClick={() => {
-            setShow(true);
-          }}
-        >
-          +
-        </div>
-        <CreatePlaylist show={show} onClose={() => setShow(false)} />
-        {data &&
-          data.map((playlist) => (
-            <PlaylistCard
-              key={playlist._id}
-              id={playlist._id}
-              imageUrl={playlist.imageUrl}
-              name={playlist.name}
-              artist={playlist.artist}
-            />
-          ))}
-      </div>
+      {currentUser ? <UserPlaylist /> : <>LOGIN TO USE THIS</>}
     </div>
   );
 }

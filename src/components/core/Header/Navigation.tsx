@@ -61,7 +61,7 @@ const Navigation = () => {
 
   return (
     // <Container>
-    <nav className=' sticky top-0 bottom-0 z-10 flex h-screen w-24 select-none flex-col items-center py-4 font-mono backdrop-blur'>
+    <nav className=' z-90 sticky top-0 bottom-0 flex h-screen w-24 select-none flex-col items-center py-4 font-mono backdrop-blur'>
       <Link href='/' passHref>
         <h2 className='text-2xl font-bold'>Logo</h2>
       </Link>

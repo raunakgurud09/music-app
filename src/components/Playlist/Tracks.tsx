@@ -12,6 +12,7 @@ function Tracks({ tracks }) {
         tracks.map((track) => (
           <TracksCard
             key={track._id}
+            audioUrl={track.audioUrl}
             name={track.name}
             artist={track.artist}
             imageUrl={track.imageUrl}
@@ -22,9 +23,3 @@ function Tracks({ tracks }) {
 }
 
 export default Tracks;
-
-//   <div key={track._id} className="bg-slate-600 flex flex-col ">
-//     <div>somthing</div>
-//     <div>otehr</div>
-//     <div>now</div>
-//   </div>

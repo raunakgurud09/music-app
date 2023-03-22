@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
+import { PlayerContext } from 'src/context/playerContext';
 
-function SmallTrack({ name = '', imageUrl, artist = '' }) {
+function SmallTrack({ audio, name = '', imageUrl, artist = '' }) {
+  const { player, setPlayer }: any = useContext(PlayerContext);
+
+  console.log(player);
   return (
-    <div className='flex h-24 w-full items-center justify-between rounded-3xl bg-stone-900 px-4'>
+    <div className='flex h-24 w-full items-center justify-between rounded-3xl bg-stone-900 py-2 px-4'>
       <div className='h-16 w-16 rounded-xl '>
         <Image
           src={imageUrl}
@@ -19,7 +23,17 @@ function SmallTrack({ name = '', imageUrl, artist = '' }) {
           <p className='text-xs opacity-80'>{artist}</p>
         </div>
       </div>
-      <div className=''>play</div>
+      <div
+        onClick={async () => {
+          setPlayer({
+            artist,
+            name,
+            audioUrl: audio,
+          });
+        }}
+      >
+        play
+      </div>
     </div>
   );
 }

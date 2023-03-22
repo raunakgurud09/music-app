@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import Wishlist from '../Badges/wishlist';
 import Image from 'next/image';
 import Transparent from '../Buttons/Transparent';
+import { PlayerContext } from 'src/context/playerContext';
 
-function TracksCard({ name, imageUrl, artist }) {
+function TracksCard({ audioUrl, name, imageUrl, artist }) {
+  const { setPlayer }: any = useContext(PlayerContext);
+
   return (
     <div className='flex h-14 flex-row items-center justify-between rounded-2xl bg-slate-700/30 px-3'>
       <div className='h-10 w-10 rounded-lg bg-black'>
@@ -25,9 +28,12 @@ function TracksCard({ name, imageUrl, artist }) {
         </div>
       </div>
       <div className='flex justify-between px-4 '>
-        <div className='w-1/2'></div>
-        <div className='w-1/2'>
-          <Transparent />
+        <div className='w-1/2'>x</div>
+        <div
+          className='w-1/2'
+          onClick={() => setPlayer({ audioUrl: audioUrl, artist, name })}
+        >
+          play
         </div>
       </div>
     </div>

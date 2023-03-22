@@ -10,7 +10,8 @@ import React, { useEffect, useState } from 'react';
 
 function playlist() {
   // const {data,isLoading,error} = useGetSinglePlaylist()
-  const [playlist, setPlaylist] = useState();
+  const [playlist, setPlaylist]: any = useState();
+
   const router = useRouter();
   const {
     isReady,

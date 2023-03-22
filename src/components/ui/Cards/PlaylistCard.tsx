@@ -20,7 +20,7 @@ function PlaylistCard({
           height='224'
           className='fill h-full rounded-3xl object-cover transition-all ease-in hover:opacity-30'
         />
-        <div className='absolute bottom-5 left-5 z-20'>
+        <div className='z-90 absolute bottom-5 left-5'>
           <h3 className='text-2xl font-light'>{name}</h3>
           <p className='text-xs font-normal'>{artist}</p>
         </div>
