@@ -1,6 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
-import { DashboardLogo, HomeIcon, PlaylistIcon } from '../Icons';
+import {
+  DashboardLogo,
+  HomeIcon,
+  Play,
+  PlaylistIcon,
+  ThreeDots,
+} from '../Icons';
+import EditIcon from '../Icons/Edit';
 import Transparent from '../ui/Buttons/Transparent';
 import PlaylistImage from '../ui/Images/PlaylistImage';
 
@@ -37,10 +44,17 @@ function Banner({
           </div>
         </div>
         <div className='flex space-x-3 text-yellow-600'>
-          <Transparent icon={<DashboardLogo />} text='Play all' />
-          <Transparent icon={<HomeIcon />} text='something' />
-          <Transparent icon={<HomeIcon />} />
-          <Transparent icon={<HomeIcon />} />
+          <Transparent icon={<Play />} text='Play all' />
+          <div className='flex h-12 w-12 items-center justify-center  rounded-[32px] bg-white/[0.07] p-[10px] backdrop-blur hover:bg-white/[0.1] '>
+            <div className='h-4 w-4'>
+              <EditIcon />
+            </div>
+          </div>
+          <div className='flex h-12 w-12 items-center justify-center  rounded-[32px] bg-white/[0.07] p-[10px] backdrop-blur hover:bg-white/[0.1] '>
+            <div className='h-4 w-4'>
+              <ThreeDots />
+            </div>
+          </div>
         </div>
       </div>
     </div>

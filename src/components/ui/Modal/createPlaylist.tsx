@@ -13,8 +13,11 @@ function createPlaylist({ show, onClose }) {
 
   return (
     <div className='fixed left-0 right-0 bottom-0 top-0 z-10 flex items-center justify-center bg-black/50'>
-      <div className='h-[500px] w-[700px] rounded-xl bg-stone-900'>
-        <div onClick={onClose} className='bg-slate-800/40'>
+      <div className='h-96 w-[700px] rounded-xl bg-stone-900'>
+        <div
+          onClick={onClose}
+          className='rounded-tr-2xl rounded-tl-2xl bg-slate-800/40 p-2'
+        >
           X
         </div>
         <div>

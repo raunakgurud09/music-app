@@ -20,8 +20,8 @@ function SmallTrack({ audio, name = '', imageUrl, artist = '' }) {
       </div>
       <div className='flex-1 px-4'>
         <div className='flex flex-col'>
-          <h4 className='text-base'>{name}</h4>
-          <p className='text-xs opacity-80'>{artist}</p>
+          <h4 className='w-48 truncate text-base'>{name}</h4>
+          <p className='w-48 truncate text-xs opacity-80'>{artist}</p>
         </div>
       </div>
       <div

@@ -20,12 +20,12 @@ function UserPlaylist() {
     <>
       <div className='flex w-full max-w-[1500px] space-x-4 overflow-x-auto p-1'>
         <div
-          className='relative h-56 w-56 rounded-[20px] bg-black'
+          className='relative flex h-56 w-56 items-center justify-center rounded-[20px] bg-stone-900'
           onClick={() => {
             setShow(true);
           }}
         >
-          +
+          <div className='m-24 text-6xl'>+</div>
         </div>
         <CreatePlaylist show={show} onClose={() => setShow(false)} />
         {data &&

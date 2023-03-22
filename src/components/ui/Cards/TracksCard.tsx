@@ -25,19 +25,20 @@ function TracksCard({ id, audioUrl, name, imageUrl, artist }) {
           className='fill h-10 w-10 rounded object-cover'
         />
       </div>
-      <div className='flex w-full justify-between px-4 '>
-        <div className='text-md w-full truncate font-sans font-thin'>
-          {name}
-        </div>
-        <div className='text-md w-full truncate font-sans font-thin '>
+      <div className='flex max-w-[1500px] justify-between px-4 '>
+        <div className='text-md w-80 truncate font-sans font-thin'>{name}</div>
+        <div className='text-md w-80 truncate font-sans font-thin '>
           {artist}
         </div>
-        <div className='text-md w-1/3 truncate font-sans font-thin '>
+        <div className='text-md w-80 truncate font-sans font-thin '>
           <Wishlist />
         </div>
       </div>
       <div className='flex items-center justify-between space-x-4 px-2 '>
-        <div className='h-4 w-4' onClick={handleMoreOptions}>
+        <div
+          className='h-4 w-4 flex-grow justify-between'
+          onClick={handleMoreOptions}
+        >
           <div
             className='h-4 w-4 cursor-pointer rounded-full'
             onClick={() => setShow(true)}

@@ -41,7 +41,10 @@ function AddToCartModal({ trackId, show, onClose }) {
   return (
     <div className='fixed left-0 right-0 bottom-0 top-0 z-10 flex items-center justify-center bg-black/50'>
       <div className='h-72 w-[700px] rounded-2xl bg-stone-900'>
-        <div onClick={onClose} className='bg-slate-800/40 p-2'>
+        <div
+          onClick={onClose}
+          className='rounded-tr-2xl rounded-tl-2xl bg-slate-800/40 p-2'
+        >
           X
         </div>
         <div className='m-4'>

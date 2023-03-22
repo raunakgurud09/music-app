@@ -57,7 +57,11 @@ function playlist() {
           {playlist ? (
             <>
               <SearchBar />
-              <Banner imageUrl={playlist?.imageUrl} />
+              <Banner
+                imageUrl={playlist?.imageUrl}
+                name={playlist.name}
+                tracksNum={playlist.tracks.length}
+              />
               <Tracks tracks={playlist?.tracks} />
             </>
           ) : (
