@@ -6,7 +6,6 @@ export const usePlaylist = () => {
   const { data: user } = useUser();
 
   const value = user ? 'api/playlist/me' : null;
-  console.log('this is working');
 
   const { data, error } = useSWR(value, PlaylistServices.getPlaylist);
   const isLoading = !data && !error;

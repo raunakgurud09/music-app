@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 import { PlayerContext } from 'src/context/playerContext';
 import TrackImage from '../Images/TrackImage';
+import Play from '@/components/Icons/Play';
 
 function SmallTrack({ audio, name = '', imageUrl, artist = '' }) {
   const { player, setPlayer }: any = useContext(PlayerContext);
 
-  console.log(player);
   return (
     <div className='flex h-24 w-full items-center justify-between rounded-3xl bg-stone-900 py-2 px-4'>
       <div className='h-16 w-16 rounded-xl '>
@@ -33,8 +33,9 @@ function SmallTrack({ audio, name = '', imageUrl, artist = '' }) {
             imageUrl: imageUrl,
           });
         }}
+        className='w-8'
       >
-        play
+        <Play />
       </div>
     </div>
   );

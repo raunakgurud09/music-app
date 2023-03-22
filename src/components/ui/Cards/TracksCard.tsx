@@ -1,12 +1,18 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Wishlist from '../Badges/wishlist';
-import Image from 'next/image';
-import Transparent from '../Buttons/Transparent';
 import { PlayerContext } from 'src/context/playerContext';
 import TrackImage from '../Images/TrackImage';
+import Play from '@/components/Icons/Play';
+import { ThreeDots } from '@/components/Icons';
+import AddToCartModal from '../Modal/AddToCartModal';
 
-function TracksCard({ audioUrl, name, imageUrl, artist }) {
+function TracksCard({ id, audioUrl, name, imageUrl, artist }) {
   const { setPlayer }: any = useContext(PlayerContext);
+  const [show, setShow] = useState(false);
+
+  const handleMoreOptions = () => {
+    console.log('more options');
+  };
 
   return (
     <div className='flex h-14 flex-row items-center justify-between rounded-2xl bg-slate-700/30 px-3'>
@@ -16,27 +22,41 @@ function TracksCard({ audioUrl, name, imageUrl, artist }) {
           alt='track'
           width={40}
           height={40}
-          className='fill h-10 rounded object-cover'
+          className='fill h-10 w-10 rounded object-cover'
         />
       </div>
       <div className='flex w-full justify-between px-4 '>
-        <div className='text-md w-1/3 truncate font-sans font-thin'>{name}</div>
-        <div className='text-md w-1/3 truncate font-sans font-thin '>
+        <div className='text-md w-full truncate font-sans font-thin'>
+          {name}
+        </div>
+        <div className='text-md w-full truncate font-sans font-thin '>
           {artist}
         </div>
         <div className='text-md w-1/3 truncate font-sans font-thin '>
           <Wishlist />
         </div>
       </div>
-      <div className='flex justify-between px-4 '>
-        <div className='w-1/2'>x</div>
+      <div className='flex items-center justify-between space-x-4 px-2 '>
+        <div className='h-4 w-4' onClick={handleMoreOptions}>
+          <div
+            className='h-4 w-4 cursor-pointer rounded-full'
+            onClick={() => setShow(true)}
+          >
+            <ThreeDots />
+          </div>
+          <AddToCartModal
+            show={show}
+            onClose={() => setShow(false)}
+            trackId={id}
+          />
+        </div>
         <div
-          className='w-1/2'
+          className='w-8'
           onClick={() =>
             setPlayer({ audioUrl: audioUrl, artist, name, imageUrl })
           }
         >
-          play
+          <Play />
         </div>
       </div>
     </div>

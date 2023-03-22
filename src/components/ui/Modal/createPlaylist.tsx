@@ -2,7 +2,7 @@ import Index from '@/components/Playlist/create/Index';
 import withAuth from '@/components/withAuth';
 import React, { useState } from 'react';
 
-const options = ['create', 'delete'];
+const options = ['create', 'update', 'delete'];
 
 function createPlaylist({ show, onClose }) {
   const [option, setOption] = useState(0);
@@ -19,18 +19,16 @@ function createPlaylist({ show, onClose }) {
         </div>
         <div>
           <div className='flex space-x-5 p-4'>
-            <div
-              onClick={() => setOption(0)}
-              className='rounded-full bg-slate-700/30 p-2 px-6'
-            >
-              Create
-            </div>
-            <div
-              onClick={() => setOption(1)}
-              className='rounded-full bg-slate-700/30 p-2 px-6'
-            >
-              Delete
-            </div>
+            {options.map((option, index) => (
+              <>
+                <div
+                  onClick={() => setOption(index)}
+                  className='rounded-full bg-slate-700/30 p-2 px-6'
+                >
+                  {option}
+                </div>
+              </>
+            ))}
           </div>
           <Index value={option} />
         </div>

@@ -12,6 +12,7 @@ function Tracks({ tracks }) {
         tracks.map((track) => (
           <TracksCard
             key={track._id}
+            id={track._id}
             audioUrl={track.audioUrl}
             name={track.name}
             artist={track.artist}

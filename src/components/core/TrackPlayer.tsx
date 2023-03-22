@@ -16,7 +16,6 @@ import TrackImage from '../ui/Images/TrackImage';
 
 function TrackPlayer() {
   const { player }: any = useContext(PlayerContext);
-  console.log(player);
   return (
     <div className='z-70 sticky bottom-0 left-0 right-0 flex h-32  w-screen items-center justify-center bg-slate-500/50 backdrop-blur-sm	'>
       <div className='flex w-full items-end justify-between space-x-6 px-10'>
