@@ -9,7 +9,7 @@ function YourTracks() {
   console.log(myTracks, 'my tracks');
 
   return (
-    <div className='flex h-[340px] w-full flex-col justify-between space-y-3 overflow-y-scroll p-1'>
+    <div className='flex h-[340px] w-full flex-col  space-y-3 overflow-y-scroll p-1'>
       {myTracks &&
         myTracks.tracks.map((track) => (
           <SmallTrack

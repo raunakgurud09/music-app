@@ -12,6 +12,7 @@ function MyApp({ Component, pageProps }) {
   const [player, setPlayer] = useState({
     name: '',
     artist: '',
+    imageUrl: '',
     audioUrl: '',
   });
 

@@ -32,7 +32,9 @@ function TracksCard({ audioUrl, name, imageUrl, artist }) {
         <div className='w-1/2'>x</div>
         <div
           className='w-1/2'
-          onClick={() => setPlayer({ audioUrl: audioUrl, artist, name })}
+          onClick={() =>
+            setPlayer({ audioUrl: audioUrl, artist, name, imageUrl })
+          }
         >
           play
         </div>

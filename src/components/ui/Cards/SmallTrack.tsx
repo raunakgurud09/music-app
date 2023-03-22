@@ -30,6 +30,7 @@ function SmallTrack({ audio, name = '', imageUrl, artist = '' }) {
             artist,
             name,
             audioUrl: audio,
+            imageUrl: imageUrl,
           });
         }}
       >

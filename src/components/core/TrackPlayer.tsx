@@ -12,6 +12,7 @@ import {
   VolumeIcon,
 } from '../Icons';
 import { PlayerContext } from 'src/context/playerContext';
+import TrackImage from '../ui/Images/TrackImage';
 
 function TrackPlayer() {
   const { player }: any = useContext(PlayerContext);
@@ -19,19 +20,21 @@ function TrackPlayer() {
   return (
     <div className='z-70 sticky bottom-0 left-0 right-0 flex h-32  w-screen items-center justify-center bg-slate-500/50 backdrop-blur-sm	'>
       <div className='flex w-full items-end justify-between space-x-6 px-10'>
-        <div className='flex '>
+        <div className='flex w-32'>
           <div>
-            <Image
-              src={lead}
+            <TrackImage
+              src={player.imageUrl}
               alt='track'
               width={48}
               height={48}
-              className='fill rounded object-cover'
+              className='fill h-12 rounded object-cover'
             />
           </div>
           <div className='ml-3 flex flex-col items-start justify-center'>
-            <h3 className='font-mono text-sm font-bold'>{player.name}</h3>
-            <p className='font-mono  text-xs font-bold opacity-40'>
+            <h3 className='w-full truncate font-mono text-sm font-bold'>
+              {player.name}
+            </h3>
+            <p className='w-full truncate font-mono text-xs font-bold opacity-40'>
               {player.artist}
             </p>
           </div>
