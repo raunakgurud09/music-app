@@ -2,6 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import { DashboardLogo, HomeIcon, PlaylistIcon } from '../Icons';
 import Transparent from '../ui/Buttons/Transparent';
+import PlaylistImage from '../ui/Images/PlaylistImage';
 
 import lead from './Lead-image.png';
 
@@ -12,13 +13,13 @@ function Banner({
 }) {
   return (
     <div className='flex h-full '>
-      <div className='w-1/4 rounded-full'>
-        <Image
+      <div className='h-80 w-1/4 rounded-full'>
+        <PlaylistImage
           src={imageUrl}
           alt={name}
           width='300'
           height='300'
-          className='fill rounded object-cover'
+          className='fill h-80 rounded object-cover'
         />
       </div>
       <div className='ml-8 flex w-3/4 flex-col justify-end space-y-4'>

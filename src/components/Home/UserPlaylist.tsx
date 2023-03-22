@@ -35,7 +35,6 @@ function UserPlaylist() {
               id={playlist._id}
               imageUrl={playlist.imageUrl}
               name={playlist.name}
-              artist={playlist.artist}
             />
           ))}
       </div>
