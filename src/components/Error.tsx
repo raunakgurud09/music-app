@@ -12,7 +12,7 @@ function Error({ message }) {
           </p>
           <p className='mt-4 flex flex-row items-center rounded bg-gradient-to-r from-cyan-500 to-blue-500 p-2 ease-in hover:bg-gradient-to-r hover:from-indigo-500  hover:to-pink-500'>
             <a
-              href='https://github.com/raunakgurud09/SHOP-ecommerce'
+              href='https://github.com/raunakgurud09/music-app'
               target='_blank'
               className='text-small'
             >
