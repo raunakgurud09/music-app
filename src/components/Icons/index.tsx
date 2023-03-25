@@ -28,3 +28,4 @@ export { default as LoopIcon } from './LoopIcon';
 export { default as VolumeIcon } from './VolumeIcon';
 export { default as ThreeDots } from './ThreeDots';
 export { default as Play } from './Play';
+export { default as Pause } from './Pause';

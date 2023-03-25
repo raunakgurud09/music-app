@@ -6,7 +6,6 @@ import Spinner from '../ui/spinner/Spinner';
 
 function YourTracks() {
   const { data: myTracks } = useMyTrack();
-  console.log(myTracks, 'my tracks');
 
   return (
     <div className='flex h-[340px] w-full flex-col  space-y-3 overflow-y-scroll p-1'>
